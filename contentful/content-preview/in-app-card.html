@@ -1,0 +1,46 @@
+<html>
+  <head></head>
+  <body>
+    <div id="__next">
+      <main
+        class="flex min-h-screen flex-col items-center justify-between p-24 bg-white"
+      >
+        <section class="w-full">
+          <div class="container space-y-12 px-4 md:px-6">
+            <div class="space-y-4">
+              <h1
+                id="title"
+                class="text-4xl font-bold tracking-tighter sm:text-5xl"
+                data-contentful-field-id="title"
+                data-contentful-entry-id="1fSggyNpn940S1Dd4kE17s"
+              >
+                Robinhood Retirement
+              </h1>
+              <div class="flex justify-between flex-col md:flex-row">
+                <p
+                  id="message"
+                  class="max-w-[900px] text-zinc-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-zinc-400"
+                  data-contentful-field-id="message"
+                  data-contentful-entry-id="1fSggyNpn940S1Dd4kE17s"
+                >
+                  You've reached {{formatPercentage
+                  .ira_fiscal_contributed_percentage 0}} to the max limit this
+                  year.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="application/javascript">
+      var refresh = function () {
+        var url = new URLSearchParams(document.location.search);
+        document.getElementById("title").innerHTML = url.get("title");
+        document.getElementById("message").innerHTML = url.get("message");
+      };
+
+      refresh();
+    </script>
+  </body>
+</html>
